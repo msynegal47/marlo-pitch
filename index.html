@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<!-- BUILD: 2026-08-01 18:59 -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junkyard Pickleball x Marlo Sport — Season 6 Title Sponsorship</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════════════════════
+     SPONSOR CONFIG — change these per sponsor.
+     Accent + logo file. Everything else is club-level.
+     ═══════════════════════════════════════════════════════════ */
+  :root {
+    --accent:      #4ce03a;
+    --accent-dim:  rgba(76,224,58,0.10);
+    --accent-line: rgba(76,224,58,0.32);
+  }
+
+  /* Club palette (fixed) */
+  :root {
+    --black: #0a0a0a;
+    --near-black: #101010;
+    --card-bg: #161616;
+    --border: #262626;
+    --white: #ffffff;
+    --off-white: #c8c8c8;
+    --red: #e8192c;
+    --muted: #808080;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--red); color: #fff; }
+  img { display: block; }
+
+  /* ══════════ HERO ══════════ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 40px 24px 56px;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 38%;
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.72) 34%, rgba(10,10,10,0.18) 56%, transparent 72%),
+      linear-gradient(to bottom, rgba(10,10,10,0.70) 0%, rgba(10,10,10,0.20) 30%, rgba(10,10,10,0.80) 74%, var(--black) 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .lockup {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .lockup-club { height: 76px; width: 76px; object-fit: contain; }
+
+  /* SPONSOR LOGO: swap the src. Any color works, forced to white. */
+  .lockup-sponsor {
+    height: 46px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  .lockup-x {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+
+  .hero-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(40px, 5.6vw, 72px);
+    font-weight: 900;
+    line-height: 0.94;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    max-width: 11ch;
+    margin-bottom: 22px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.5);
+  }
+
+  .hero-headline .red { color: var(--red); font-style: italic; }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--off-white);
+    max-width: 30ch;
+    line-height: 1.65;
+  }
+
+  .hero-sub strong { color: var(--white); }
+
+  .hero-venue {
+    margin-top: 34px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.16);
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+
+  .hero-venue span:not(:last-child)::after {
+    content: '';
+  }
+
+  /* ══════════ SHARED SECTION FURNITURE ══════════ */
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  .band { padding: 90px 0; }
+  .band.dark { background: var(--near-black); }
+
+  .tag {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 12px;
+    margin-bottom: 22px;
+  }
+
+  .title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  .lede {
+    font-size: 17px;
+    color: var(--off-white);
+    max-width: 680px;
+    line-height: 1.7;
+  }
+
+  .lede strong { color: var(--white); }
+
+  .rule { border: 0; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+
+  /* ══════════ THE ASK ══════════ */
+  .ask-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    background: var(--border);
+  }
+
+  .ask {
+    background: var(--card-bg);
+    padding: 38px 30px;
+    position: relative;
+  }
+
+  .ask::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+  }
+
+  .ask-kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .ask-head {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .ask-body { font-size: 14px; color: var(--off-white); line-height: 1.7; }
+  .ask-body strong { color: var(--white); }
+
+  .tiers { margin-top: 16px; border-top: 1px solid var(--border); }
+
+  .tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .tier-place {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+
+  .tier-count { color: var(--accent); font-weight: 600; }
+
+  .tier-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  /* proof photo under the ask */
+  .proof-photo {
+    position: relative;
+    margin-top: 2px;
+  }
+
+  .proof-photo img {
+    width: 100%;
+    aspect-ratio: 21/9;
+    object-fit: cover;
+    object-position: center 34%;
+  }
+
+  .proof-photo .cap {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 26px 30px;
+    background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, transparent 100%);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+
+  /* ══════════ WHY THIS COULD WORK ══════════ */
+  .layers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    background: var(--border);
+  }
+
+  .layer { background: var(--card-bg); padding: 34px 28px; }
+
+  .layer-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .layer-head {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .layer-body { font-size: 14px; color: var(--off-white); line-height: 1.7; }
+
+  .closer {
+    margin-top: 46px;
+    padding: 30px 32px;
+    border-left: 3px solid var(--red);
+    background: var(--card-bg);
+    font-size: 16px;
+    color: var(--off-white);
+    line-height: 1.75;
+    max-width: 780px;
+  }
+
+  .closer strong { color: var(--white); }
+
+  /* ══════════ COVERAGE ══════════ */
+  .cov-intro { text-align: center; padding-bottom: 40px; }
+
+  .cov-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .cov-head {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(30px, 4.4vw, 48px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.03;
+    margin-bottom: 16px;
+  }
+
+  .cov-sub {
+    font-size: 16px;
+    color: var(--off-white);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .shots img { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
+
+  .shots .tall { grid-row: span 2; }
+  .shots .tall img { aspect-ratio: 3/4.06; }
+
+  .credit {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+  }
+
+  .credit-text { font-size: 13px; color: var(--off-white); line-height: 1.5; }
+  .credit-text strong { color: var(--white); }
+  .credit-text .handle { color: var(--accent); }
+
+  /* ══════════ CTA ══════════ */
+  .cta {
+    text-align: center;
+    padding: 90px 24px 110px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232,25,44,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+
+  .cta-head {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(42px, 6.5vw, 76px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-head .red { color: var(--red); font-style: italic; }
+
+  .cta-body {
+    font-size: 17px;
+    color: var(--off-white);
+    max-width: 580px;
+    margin: 0 auto 38px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-body strong { color: var(--white); }
+
+  .card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    min-width: 260px;
+  }
+
+  .card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .card-role {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .handles { display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+  .handles span { font-size: 14px; color: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 26px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ══════════ RESPONSIVE ══════════ */
+  @media (max-width: 860px) {
+    .hero-headline { max-width: 100%; }
+    .hero-sub { max-width: 100%; }
+    .hero-scrim { background: linear-gradient(to bottom, rgba(10,10,10,0.80) 0%, rgba(10,10,10,0.45) 30%, rgba(10,10,10,0.88) 72%, var(--black) 100%); }
+    .ask-grid, .layers { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: 1fr 1fr; }
+    .shots .tall { grid-row: span 1; }
+    .shots .tall img { aspect-ratio: 3/2; }
+    .lockup { top: 26px; gap: 14px; }
+    .lockup-club { height: 58px; width: 58px; }
+    .lockup-sponsor { height: 34px; }
+    .proof-photo img { aspect-ratio: 4/3; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* sponsor wordmark fallback */
+  .lockup-word {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 34px; font-weight: 900; letter-spacing: -0.01em;
+    color: var(--white); line-height: 1; display: inline-flex;
+    align-items: baseline; gap: 8px;
+  }
+  .lockup-word em {
+    font-style: normal; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.24em; color: var(--accent);
+  }
+
+  /* halloween band */
+  .hw-title-row { display: flex; align-items: flex-start; gap: 28px; }
+  .hw-title-row .hw-copy { flex: 1; }
+  .hw-mark { width: 132px; height: auto; flex-shrink: 0; margin-top: -8px; }
+
+  /* collab merch */
+  .merch-lead { display: grid; grid-template-columns: 1fr 1.15fr; gap: 12px; align-items: stretch; }
+  .merch-lead > img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .merch-mocks { display: grid; grid-template-rows: repeat(3, 1fr); gap: 12px; }
+  .merch-mocks img { width: 100%; height: 100%; object-fit: contain; background: #f4f4f4; padding: 8px; }
+
+  .hw-hero { position: relative; margin-top: 48px; }
+  .hw-hero img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center 34%; }
+  .hw-hero .cap {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 30px;
+    background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, transparent 100%);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--off-white);
+  }
+  .hw-cap {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+    margin: 12px 0 16px;
+  }
+  .hw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 4px; }
+  .hw-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+
+  .hw-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; background: var(--border); }
+  .hw-point { background: var(--card-bg); padding: 32px 28px; }
+  .hw-point-head {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 19px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; color: var(--accent);
+  }
+  .hw-point-body { font-size: 14px; color: var(--off-white); line-height: 1.7; }
+
+  /* collab merch */
+  .merch-head {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.06em; margin: 52px 0 6px;
+  }
+  .merch-note { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+  .merch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .merch img { width: 100%; background: #f4f4f4; padding: 10px; }
+
+  @media (max-width: 860px) {
+    .hw-grid { grid-template-columns: 1fr 1fr; }
+    .hw-points { grid-template-columns: 1fr; }
+    .merch-lead { grid-template-columns: 1fr; }
+    .merch-mocks { grid-template-rows: none; grid-template-columns: 1fr; }
+    .hw-title-row { flex-direction: column-reverse; gap: 18px; }
+    .hw-mark { width: 96px; margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <img class="hero-photo" src="img/hero.jpg" alt="Junkyard Pickleball session at Center Court Pickleball Club">
+  <div class="hero-scrim"></div>
+
+  <div class="lockup">
+    <img class="lockup-club" src="img/szn6-logo.png" alt="Junkyard Season 6">
+    <span class="lockup-x">×</span>
+    <img class="lockup-sponsor" src="img/sponsor-logo.png" alt="Marlo Sport" onerror="this.outerHTML='<span class=&quot;lockup-word&quot;>Marlo<em>SPORT</em></span>'">
+  </div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Season 6 Title Sponsorship</p>
+    <h1 class="hero-headline">One of Gilbert's <span class="red">Most Active</span> Pickleball Communities.</h1>
+    <p class="hero-sub">Junkyard Pickleball runs three mornings a week at Center Court Pickleball Club, and we fill the building every time. We've already run a Marlo-only event and a collab drop together. <strong>Season 6 is where we make it the whole season.</strong></p>
+    <div class="hero-venue">
+      <span>Center Court Pickleball Club</span>
+      <span>Gilbert, AZ</span>
+      <span>Mon / Wed / Fri · 5–7 AM</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ THE ASK ══════════ -->
+<div class="band dark">
+  <div class="wrap">
+    <span class="tag">The Ask</span>
+    <h2 class="title">What We're Asking For</h2>
+    <p class="lede">Three asks that stack. Product for the season, a prize pool that carries Marlo's name on it, and a program that keeps running after. We've already done a collab drop and a Marlo-only event together, so this is about <strong>making it the whole season</strong>, not starting from scratch.</p>
+
+    <div class="ask-grid">
+
+      <div class="ask">
+        <div class="ask-kicker">Ask 01</div>
+        <div class="ask-head">Swag Pack Accessories</div>
+        <div class="ask-body">
+          Every Season 6 player gets a pack at the launch event. We're building <strong>54 of them</strong>.<br><br>
+          <strong>What fits:</strong> gear, hats, towels, shirts, paddle cases, accessories, whatever you want in front of players all season.<br><br>
+          As title sponsor, these come donated. Every pack puts Marlo in the hands of someone on court three mornings a week.
+        </div>
+      </div>
+
+      <div class="ask">
+        <div class="ask-kicker">Ask 02</div>
+        <div class="ask-head">Title Prize Pool</div>
+        <div class="ask-body">
+          As title sponsor, the podium is <strong>the Marlo prize pool</strong>, named and branded as such all season.
+          <div class="tiers">
+            <div class="tier"><span class="tier-place">Champions</span><span class="tier-count">9 · paddles + gear bundle</span></div>
+            <div class="tier"><span class="tier-place">Runner-up</span><span class="tier-count">9 · gear bundle</span></div>
+            <div class="tier"><span class="tier-place">Third place</span><span class="tier-count">9 · accessories</span></div>
+            <div class="tier-total"><span>Total</span><span>27 winners</span></div>
+          </div>
+          <br>
+          A Siberian Pro or Pro line paddle plus a gear bundle per champion, then scaled bundles down the tiers. Gift cards work too if that's easier on your end. This is the moment everyone photographs.
+        </div>
+      </div>
+
+      <div class="ask">
+        <div class="ask-kicker">Ask 03</div>
+        <div class="ask-head">Club VIP Program</div>
+        <div class="ask-body">
+          Run Junkyard through <strong>VIP Ambassador</strong> as a club-level group.<br><br>
+          A club code across our paying membership, restocking paddles and gear year round. You get repeat revenue and a tracked number to point at internally. We get a reason to keep pushing it in the group.<br><br>
+          You're already in Gilbert. Let's keep pushing on the home front.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="proof-photo">
+    <img src="img/proof.jpg" alt="Junkyard player mid-rally with a Marlo paddle">
+    <div class="cap">All smiles. All league long.</div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- ══════════ WHY THIS WORKS ══════════ -->
+<div class="band">
+  <div class="wrap">
+    <span class="tag">The Room</span>
+    <h2 class="title">Why This Works</h2>
+    <p class="lede">All ten courts at Center Court, filled, Monday / Wednesday / Friday. Here's who's in the building.</p>
+
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-num">65</div>
+        <div class="layer-head">Paying Club Members</div>
+        <div class="layer-body">A closed list. Members pay for access to the sessions, which is what keeps the courts full and the level consistent. This is the core group that shows up before sunrise week after week.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">54</div>
+        <div class="layer-head">In the Season 6 League</div>
+        <div class="layer-body">Six franchise teams, two divisions, a ten-week regular season inside a twelve-week league, DUPR-rated rosters and a custom league app for scoring and standings. These are the 54 players getting a swag pack at launch.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">130+</div>
+        <div class="layer-head">Open Community Chat</div>
+        <div class="layer-body">A broader thread we run and moderate. When the core 65 can't fill all ten courts on a given morning, this is who fills the gap. It also feeds new members into the closed list.</div>
+      </div>
+    </div>
+
+    <div class="closer">
+      The <strong>5 AM start</strong> is the filter. Nobody casual is getting out of bed before sunrise three days a week, so what's left is players who take their gear seriously. Add a premium indoor facility they're already paying court time for, on top of paddles, league fees and jerseys, and you're looking at the exact buyer Marlo sells to. Put Marlo gear in their hands and the reorder comes out of their own pocket.
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- ══════════ THE HALLOWEEN EVENT ══════════ -->
+<div class="band dark">
+  <div class="wrap">
+    <div class="hw-title-row">
+      <div class="hw-copy">
+        <span class="tag">The Marlo Event</span>
+        <h2 class="title">We've Already Done This Once.</h2>
+        <p class="lede">Last Halloween we ran a <strong>Marlo-only event</strong>. Full house, every court Marlo, costumes, a collab shirt drop, and a full day of content. It was the most-shared thing we've ever run. <strong>Let's open it up again and get these paddles back in players' hands.</strong></p>
+      </div>
+      <img class="hw-mark" src="img/dinkman.png" alt="Marlo x Junkyard Dinkman mark">
+    </div>
+
+    <div class="hw-points">
+      <div class="hw-point">
+        <div class="hw-point-head">Marlo-Only Courts</div>
+        <div class="hw-point-body">Full house, every court, nobody playing on anything else that day. Fifty-plus players putting real reps on your paddles, which is how a demo turns into a purchase.</div>
+      </div>
+      <div class="hw-point">
+        <div class="hw-point-head">Collab Merch, Round Two</div>
+        <div class="hw-point-body">We designed and dropped three Marlo x JNKYRD shirts last time. Players still wear them to sessions. Happy to run a Season 6 version and split it however makes sense.</div>
+      </div>
+      <div class="hw-point">
+        <div class="hw-point-head">Content That Actually Travels</div>
+        <div class="hw-point-body">Costumes plus competition is the one combination people repost without being asked. Everything below came out of a single morning, all of it shot in-house.</div>
+      </div>
+    </div>
+
+    <div class="hw-hero">
+      <img src="img/hw-group.jpg" alt="Junkyard Halloween Marlo event group photo">
+    </div>
+    <p class="hw-cap">Last Halloween · Marlo paddles only · costumes mandatory</p>
+    <div class="hw-grid">
+      <img src="img/hw-01.jpg" alt="Halloween event play">
+      <img src="img/hw-02.jpg" alt="Halloween event play">
+      <img src="img/hw-03.jpg" alt="Halloween event celebration">
+      <img src="img/hw-04.jpg" alt="Halloween event rally">
+    </div>
+
+    <h3 class="merch-head">The Collab Drop</h3>
+    <p class="merch-note">Three Marlo x JNKYRD shirts from the last run. Still in rotation at sessions a year later.</p>
+    <div class="merch-lead">
+      <img src="img/merch-real.jpg" alt="Marlo x JNKYRD collab shirt on court">
+      <div class="merch-mocks">
+        <img src="img/merch-01.jpg" alt="Marlo x JNKYRD collab shirt, white">
+        <img src="img/merch-02.jpg" alt="Marlo x JNKYRD collab shirt, black">
+        <img src="img/merch-03.jpg" alt="Marlo x JNKYRD collab shirt, coral">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- ══════════ COVERAGE ══════════ -->
+<div class="band">
+  <div class="wrap">
+    <div class="cov-intro">
+      <div class="cov-eyebrow">The Coverage</div>
+      <h2 class="cov-head">This Is What Every Season Looks Like.</h2>
+      <p class="cov-sub">Shot at our sessions, on our courts, all season long. Same treatment your product would get.</p>
+    </div>
+
+    <div class="shots">
+      <figure class="tall"><img src="img/shot-01.jpg" alt="Junkyard players between games"></figure>
+      <figure><img src="img/shot-02.jpg" alt="Team jerseys courtside"></figure>
+      <figure><img src="img/shot-03.jpg" alt="Players celebrating"></figure>
+      <figure><img src="img/shot-04.jpg" alt="Match play at Center Court"></figure>
+      <figure><img src="img/shot-05.jpg" alt="High fives after a match"></figure>
+      <figure><img src="img/shot-06.jpg" alt="Watching from the sideline"></figure>
+    </div>
+
+    <div class="credit">
+      <div class="credit-text">
+        All league photography shot in-house on <strong>mirrorless bodies and high-end fast glass</strong>, not phone clips.<br>
+        Season coverage runs weekly. <span class="handle">@mittz.flix</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CTA ══════════ -->
+<div class="cta">
+  <p class="cta-eyebrow">Season 6 Kicks Off September 3</p>
+  <h2 class="cta-head">Let's Run It <span class="red">Back.</span></h2>
+  <p class="cta-body">Packs are being assembled now, so timing matters more than size. A yes on accessories gets Marlo into all <strong>54 packs</strong> at launch, and the prize pool and Halloween event build from there.</p>
+
+  <div class="card">
+    <div class="card-name">Marcus Synegal</div>
+    <div class="card-role">Commissioner, Junkyard Pickleball</div>
+    <div class="handles">
+      <span>@junkyard_pickleball</span>
+      <span>@mittz.flix</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Junkyard Pickleball · Gilbert, AZ</span>
+  <span>Season 6 · Sept–Nov 2026<span style="opacity:.35"> · b2026-08-01 18:59</span></span>
+</footer>
+
+</body>
+</html>
